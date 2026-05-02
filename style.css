@@ -1,0 +1,1082 @@
+/* ============================================================
+   XIMENA RODRIGUEZ — DATA SCIENCE PORTFOLIO
+   style.css — All visual styles for the portfolio website
+   This file is linked from index.html and controls every
+   color, font, layout, animation, and responsive behavior.
+   ============================================================ */
+
+
+/* ── DESIGN TOKENS (CSS Custom Properties) ──────────────────
+   These variables define the entire color palette and are used
+   throughout this file. Change them here to retheme the site. */
+:root {
+  --navy:      #0b1628;   /* darkest background — deep midnight navy */
+  --navy2:     #162032;   /* slightly lighter background for alternating sections */
+  --navy3:     #1e2d42;   /* card backgrounds and subtle containers */
+  --teal:      #2dd4bf;   /* primary accent — vibrant teal for highlights and CTAs */
+  --teal-dark: #0d9488;   /* darker teal for hover states */
+  --gold:      #f59e0b;   /* warm gold used sparingly for special callouts */
+  --slate:     #94a3b8;   /* muted text — body copy, labels, secondary info */
+  --white:     #f0f9ff;   /* near-white for headings and key text */
+  --card:      #1a2840;   /* main card background */
+  --border:    rgba(45, 212, 191, 0.15); /* subtle teal-tinted borders */
+}
+
+
+/* ── CSS RESET ───────────────────────────────────────────────
+   Remove browser default margins and padding on every element,
+   and use border-box sizing so padding doesn't expand elements. */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ── BASE DOCUMENT ───────────────────────────────────────────
+   Set the global font, background, text color, and enable
+   smooth anchor scrolling for the navigation links. */
+html {
+  scroll-behavior: smooth; /* glides to sections when nav links are clicked */
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* clean sans-serif loaded from Google Fonts */
+  background-color: var(--navy);
+  color: var(--white);
+  line-height: 1.75;               /* generous line height for comfortable reading */
+  font-size: 16px;
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   NAVIGATION BAR
+   Fixed at the top so it stays visible while scrolling.
+   Uses backdrop blur to create a frosted-glass effect.
+   ════════════════════════════════════════════════════════════ */
+nav {
+  position: fixed;              /* stays at the top on scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;                 /* render above all other content */
+  background: rgba(11, 22, 40, 0.85); /* semi-transparent navy */
+  backdrop-filter: blur(14px);  /* frosted-glass blur behind the nav */
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+}
+
+/* Logo text in the top-left of the nav */
+.nav-logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--teal);
+  letter-spacing: 0.05em;
+}
+
+/* Horizontal list of navigation links */
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none; /* remove bullet points */
+}
+
+.nav-links a {
+  color: var(--slate);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease; /* smooth color change on hover */
+}
+
+.nav-links a:hover {
+  color: var(--teal);
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   REUSABLE SECTION LAYOUT
+   Every <section> on the page uses these shared styles.
+   ════════════════════════════════════════════════════════════ */
+
+/* All sections get generous vertical padding */
+section {
+  padding: 6rem 2rem;
+}
+
+/* Constrains content width and centers it horizontally */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Small all-caps teal label above the main section title */
+.section-label {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.4rem;
+}
+
+/* Large bold heading for each section */
+.section-title {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.6rem); /* scales between mobile and desktop */
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+/* Short teal underline accent beneath the section title */
+.divider {
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-dark));
+  border-radius: 2px;
+  margin: 0.6rem auto 1.4rem;
+}
+
+/* Optional paragraph of context text under the title */
+.section-desc {
+  text-align: center;
+  color: var(--slate);
+  max-width: 600px;
+  margin: 0 auto 3.5rem;
+  font-size: 1rem;
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   REUSABLE BUTTON STYLES
+   .btn         — filled teal primary button
+   .btn-outline — transparent, teal-bordered secondary button
+   ════════════════════════════════════════════════════════════ */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  background: var(--teal);
+  color: var(--navy);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid var(--teal);
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+}
+
+.btn:hover {
+  background: var(--teal-dark);
+  border-color: var(--teal-dark);
+  transform: translateY(-2px);              /* subtle lift on hover */
+  box-shadow: 0 8px 24px rgba(45, 212, 191, 0.3);
+}
+
+/* Outlined variant — transparent background, visible border */
+.btn-outline {
+  background: transparent;
+  color: var(--teal);
+  margin-left: 1rem;
+}
+
+.btn-outline:hover {
+  background: var(--teal);
+  color: var(--navy);
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   HERO SECTION
+   Full-viewport landing area with photo and intro text.
+   Uses CSS Grid to place text and photo side by side.
+   ════════════════════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;          /* fills the full screen on load */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 2rem 5rem;   /* top padding accounts for the fixed nav */
+
+  /* layered background: base navy + subtle radial glow */
+  background:
+    radial-gradient(ellipse 70% 80% at 75% 55%, rgba(45, 212, 191, 0.09) 0%, transparent 65%),
+    linear-gradient(160deg, #0b1628 0%, #0e1f35 60%, #0b1a2e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative floating grid lines in the background */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(45,212,191,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45,212,191,0.04) 1px, transparent 1px);
+  background-size: 60px 60px; /* grid cell size */
+  pointer-events: none;       /* doesn't block clicks */
+}
+
+/* Two-column grid: text on left, photo on right */
+.hero-inner {
+  max-width: 1140px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative; /* sits above the ::before grid overlay */
+  z-index: 1;
+}
+
+/* ── Hero text column ── */
+/* Tiny sport/origin badges above the name */
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-badge {
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid var(--border);
+  color: var(--teal);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+
+/* Main name heading — large and bold */
+.hero-text h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text h1 span {
+  color: var(--teal); /* highlight first name in teal */
+}
+
+/* Professional title below the name */
+.hero-subtitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.4rem;
+}
+
+/* The personal tagline — the hook sentence */
+.hero-tagline {
+  font-size: 1.1rem;
+  color: var(--slate);
+  max-width: 460px;
+  margin-bottom: 2.2rem;
+  line-height: 1.8;
+}
+
+.hero-tagline strong {
+  color: var(--white);
+}
+
+/* ── Hero photo column ── */
+/* Outer ring with teal glow */
+.hero-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-ring {
+  position: relative;
+  width: 340px;
+  height: 340px;
+}
+
+/* Animated rotating border arc behind the photo */
+.avatar-ring::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--navy), var(--navy)) padding-box,
+              linear-gradient(135deg, var(--teal), transparent 60%) border-box;
+  animation: spin 8s linear infinite; /* slowly rotates */
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Circular photo container with teal border glow */
+.avatar-wrap {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--teal);
+  box-shadow:
+    0 0 0 8px rgba(45, 212, 191, 0.08),  /* inner soft ring */
+    0 0 80px rgba(45, 212, 191, 0.18);   /* outer glow halo */
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the circle without distortion */
+}
+
+/* Fallback displayed if photo.jpg is missing */
+.avatar-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy3);
+  font-family: 'Poppins', sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--teal);
+}
+
+/* Small floating stat pill in the bottom-right of the photo */
+.avatar-stat {
+  position: absolute;
+  bottom: 20px;
+  right: -20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  z-index: 2;
+}
+
+.avatar-stat-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--teal);
+  line-height: 1;
+}
+
+.avatar-stat-label {
+  font-size: 0.7rem;
+  color: var(--slate);
+  margin-top: 0.15rem;
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   STORY SECTION (About)
+   Personal narrative with alternating background.
+   ════════════════════════════════════════════════════════════ */
+#story {
+  background: var(--navy2); /* alternates from hero's darker navy */
+}
+
+/* Two-column layout: story text + stats/milestones */
+.story-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr; /* text gets more space than sidebar */
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Pull-quote styled intro sentence */
+.story-quote {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-weight: 700;
+  color: var(--white);
+  border-left: 4px solid var(--teal);
+  padding-left: 1.2rem;
+  margin-bottom: 1.8rem;
+  line-height: 1.5;
+}
+
+/* Body paragraphs of the personal story */
+.story-text p {
+  color: var(--slate);
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+.story-text p strong {
+  color: var(--white);
+}
+
+/* Emotional emoji callouts within the story text */
+.story-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid var(--border);
+  color: var(--teal);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin: 0.2rem 0;
+}
+
+/* Right sidebar: life milestones as vertical timeline */
+.story-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.story-sidebar h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+}
+
+/* Each milestone item on the timeline */
+.milestone {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Vertical connecting line between milestones */
+.milestone:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 13px;          /* aligns under the dot */
+  top: 28px;
+  bottom: 0;
+  width: 2px;
+  background: rgba(45, 212, 191, 0.2);
+}
+
+/* Circular bullet at the start of each milestone */
+.milestone-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--navy3);
+  border: 2px solid var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.milestone-year {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 0.15rem;
+}
+
+.milestone-text {
+  font-size: 0.88rem;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+.milestone-text strong {
+  color: var(--white);
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   SKILLS SECTION
+   Grid of skill cards with animated progress bars.
+   ════════════════════════════════════════════════════════════ */
+#skills {
+  background: var(--navy);
+}
+
+/* Three-column grid of skill cards */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Individual skill card */
+.skill-card {
+  background: var(--card);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 16px;
+  padding: 2rem 1.6rem;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.skill-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-5px); /* float up on hover */
+  box-shadow: 0 12px 40px rgba(45, 212, 191, 0.1);
+}
+
+.skill-icon {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.skill-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+/* Bulleted list of individual skills inside a card */
+.skill-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.2rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--slate);
+}
+
+/* Teal arrow bullet */
+.skill-item::before {
+  content: '▹';
+  color: var(--teal);
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+/* ── Animated progress bars ── */
+/* Label row above each bar: skill name on left, percentage on right */
+.bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--slate);
+  margin-bottom: 0.3rem;
+  margin-top: 0.8rem;
+}
+
+/* Grey track the bar fills into */
+.bar-track {
+  height: 5px;
+  background: rgba(148, 163, 184, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+/* The teal fill — width starts at 0 and is animated to data-width via JS */
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--teal-dark));
+  border-radius: 3px;
+  width: 0;
+  transition: width 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   MISSION & VISION SECTION
+   Persuasive NLP copy with stat callouts.
+   ════════════════════════════════════════════════════════════ */
+#mission {
+  background: var(--navy2);
+}
+
+/* Two equal cards side by side */
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+  margin-bottom: 3rem;
+}
+
+/* Mission / Vision card */
+.mv-card {
+  background: var(--navy);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top colored strip — acts as a "tab" identifier */
+.mv-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-dark));
+}
+
+.mv-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+.mv-card p {
+  color: var(--slate);
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+
+.mv-card p strong {
+  color: var(--white);
+}
+
+/* ── NLP persuasion banner ──
+   Large italic quote + social-proof statistics */
+.nlp-banner {
+  background: linear-gradient(135deg, rgba(45,212,191,0.08), rgba(13,148,136,0.05));
+  border: 1px solid rgba(45, 212, 191, 0.2);
+  border-radius: 18px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+}
+
+/* Future-pacing NLP quote */
+.nlp-quote {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--white);
+  max-width: 700px;
+  margin: 0 auto 0.8rem;
+  line-height: 1.65;
+}
+
+.nlp-quote span {
+  color: var(--teal);
+}
+
+/* Supporting social-proof sentence */
+.nlp-sub {
+  color: var(--slate);
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.nlp-sub strong {
+  color: var(--white);
+}
+
+/* Row of three proof statistics */
+.proof-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.proof-stat-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--teal);
+  line-height: 1;
+}
+
+.proof-stat-label {
+  font-size: 0.78rem;
+  color: var(--slate);
+  margin-top: 0.25rem;
+  max-width: 120px;
+  margin: 0.25rem auto 0;
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   GITHUB PROJECT SECTION
+   Styled to look exactly like a real GitHub repository card.
+   ════════════════════════════════════════════════════════════ */
+#projects {
+  background: var(--navy);
+}
+
+/* Centered card with max-width so it doesn't stretch too wide */
+.project-card {
+  background: var(--card);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 820px;
+  margin: 0 auto;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.project-card:hover {
+  border-color: var(--teal);
+  box-shadow: 0 12px 50px rgba(45, 212, 191, 0.1);
+}
+
+/* Dark header bar that mimics GitHub's repository header */
+.project-header {
+  background: rgba(11, 22, 40, 0.7);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  padding: 1.1rem 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.gh-icon { font-size: 1.7rem; }
+
+/* "owner / repo-name" breadcrumb */
+.project-repo { font-family: 'Poppins', sans-serif; font-size: 0.95rem; }
+.project-repo .owner { color: var(--slate); }
+.project-repo .name  { color: var(--teal); font-weight: 700; }
+
+/* "Public" badge on the right */
+.project-badge {
+  margin-left: auto;
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid var(--border);
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* Main content area of the project card */
+.project-body { padding: 2rem 1.8rem; }
+
+.project-body h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+
+.project-body > p {
+  color: var(--slate);
+  font-size: 0.93rem;
+  margin-bottom: 1.4rem;
+  line-height: 1.75;
+}
+
+/* Bulleted feature list with teal checkmarks */
+.project-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.project-features li {
+  font-size: 0.9rem;
+  color: var(--slate);
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.project-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-weight: 700;
+}
+
+/* Tech stack pill tags */
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.stack-tag {
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  color: var(--slate);
+  font-size: 0.78rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 6px;
+}
+
+/* Footer row with stars, forks, license, and repo link */
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--slate);
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+  padding-top: 1.2rem;
+}
+
+.project-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* "View on GitHub →" link floated to the far right */
+.project-link {
+  color: var(--teal);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: auto;
+  font-size: 0.85rem;
+  transition: text-decoration 0.2s;
+}
+
+.project-link:hover { text-decoration: underline; }
+
+
+/* ════════════════════════════════════════════════════════════
+   SERVICES SECTION
+   Four service cards in a 2×2 grid.
+   ════════════════════════════════════════════════════════════ */
+#services {
+  background: var(--navy2);
+}
+
+/* 2-column grid of service cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Each service is an icon + title + short description */
+.service-card {
+  background: var(--navy);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 14px;
+  padding: 2rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.service-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-4px);
+}
+
+.service-icon { font-size: 2rem; flex-shrink: 0; }
+
+.service-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+
+.service-card p {
+  color: var(--slate);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   CONTACT SECTION
+   Centered card with email, phone, and location info.
+   ════════════════════════════════════════════════════════════ */
+#contact {
+  background: var(--navy);
+}
+
+/* Narrower container to keep the contact card from being too wide */
+.contact-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* The bordered card wrapping the contact info */
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  margin-top: 2rem;
+}
+
+/* 2-column grid of individual contact detail items */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Each contact detail: icon + label + value */
+.contact-item {
+  background: var(--navy);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 12px;
+  padding: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: left;
+}
+
+.ci-icon { font-size: 1.4rem; flex-shrink: 0; }
+
+.ci-label {
+  font-size: 0.72rem;
+  color: var(--slate);
+  margin-bottom: 0.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.ci-value {
+  font-size: 0.9rem;
+  color: var(--white);
+}
+
+.ci-value a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.ci-value a:hover { text-decoration: underline; }
+
+/* Full-width CTA button at the bottom of the contact card */
+.contact-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   FOOTER
+   Minimal one-line footer at the very bottom of the page.
+   ════════════════════════════════════════════════════════════ */
+footer {
+  background: var(--navy2);
+  border-top: 1px solid rgba(148, 163, 184, 0.08);
+  text-align: center;
+  padding: 1.8rem 2rem;
+  color: var(--slate);
+  font-size: 0.83rem;
+}
+
+footer span { color: var(--teal); }
+
+
+/* ════════════════════════════════════════════════════════════
+   SCROLL ANIMATIONS
+   Elements start invisible (opacity 0, shifted down 30px)
+   and transition to visible when they enter the viewport.
+   JavaScript triggers the .visible class via IntersectionObserver.
+   ════════════════════════════════════════════════════════════ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay classes — applied to children in a grid so they
+   appear one after another instead of all at once */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+   Mobile-first breakpoints that collapse multi-column grids
+   into single-column stacks on smaller screens.
+   ════════════════════════════════════════════════════════════ */
+
+/* Tablet — hide some nav links, collapse some grids */
+@media (max-width: 900px) {
+  .skills-grid    { grid-template-columns: 1fr 1fr; }
+  .story-grid     { grid-template-columns: 1fr; }
+  .mv-grid        { grid-template-columns: 1fr; }
+}
+
+/* Mobile — single column everything */
+@media (max-width: 680px) {
+  /* Stack hero vertically: photo on top, text below */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-photo { order: -1; } /* photo appears above text on mobile */
+
+  .avatar-ring { width: 220px; height: 220px; }
+  .avatar-stat { right: 0; bottom: 0; }
+
+  .hero-tagline { margin-left: auto; margin-right: auto; }
+
+  .btn-outline { margin-left: 0; margin-top: 0.8rem; }
+
+  /* All grids collapse to one column */
+  .skills-grid    { grid-template-columns: 1fr; }
+  .services-grid  { grid-template-columns: 1fr; }
+  .contact-grid   { grid-template-columns: 1fr; }
+
+  /* Proof statistics stack vertically */
+  .proof-stats { gap: 1.8rem; }
+}
+
+/* Very small phones — hide nav links to avoid overflow */
+@media (max-width: 440px) {
+  .nav-links { display: none; }
+  nav        { padding: 0.9rem 1.2rem; }
+}
