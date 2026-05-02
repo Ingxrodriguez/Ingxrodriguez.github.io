@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <!--
   ============================================================
-  XIMENA RODRIGUEZ — DATA SCIENCE PORTFOLIO
-  index.html — Main HTML structure of the portfolio website
+  XIMENA RODRIGUEZ, DATA SCIENCE PORTFOLIO
+  index.html, Main HTML structure of the portfolio website
 
   This file contains only the structure (HTML) and content.
   All visual styles live in style.css (linked in the <head>).
   All interactive behavior is in the <script> block at the bottom.
 
   SECTIONS IN THIS FILE:
-    1. <head>     — Metadata, fonts, stylesheet link
-    2. <nav>      — Fixed navigation bar
-    3. .hero      — Full-screen landing with photo and tagline
-    4. #story     — Personal narrative (the "About Me" story)
-    5. #skills    — Technical, data science, and business skills
-    6. #mission   — Mission, Vision, and NLP persuasion banner
-    7. #projects  — Featured GitHub project card
-    8. #services  — The four services offered to clients
-    9. #contact   — Contact details and email CTA
-   10. <footer>   — One-line footer
-   11. <script>   — Scroll animations + skill bar logic
+    1. <head>    , Metadata, fonts, stylesheet link
+    2. <nav>     , Fixed navigation bar
+    3. .hero     , Full-screen landing with photo and tagline
+    4. #story    , Personal narrative (the "About Me" story)
+    5. #skills   , Technical, data science, and business skills
+    6. #mission  , Mission, Vision, and NLP persuasion banner
+    7. #projects , Featured GitHub project card
+    8. #services , The four services offered to clients
+    9. #contact  , Contact details and email CTA
+   10. <footer>  , One-line footer
+   11. <script>  , Scroll animations + skill bar logic
   ============================================================
 -->
 <html lang="en">
@@ -37,8 +37,8 @@
   <!-- Tab title and browser bookmark label -->
   <title>Ximena Rodriguez | Data Scientist &amp; Analyst</title>
 
-  <!-- SEO meta description — helps search engines summarize the page -->
-  <meta name="description" content="Ximena Rodriguez — Bilingual Data Scientist based in Stamford, CT. Python, SQL, Pandas, Jupyter Notebook. From Colombia to Connecticut, turning raw data into business decisions." />
+  <!-- SEO meta description, helps search engines summarize the page -->
+  <meta name="description" content="Ximena Rodriguez, Bilingual Data Scientist based in Stamford, CT. Python, SQL, Pandas, Jupyter Notebook. From Colombia to Connecticut, turning raw data into business decisions." />
 
   <!-- Google Fonts: Poppins for headings, Inter for body text.
        Preconnect hints tell the browser to open the connection early. -->
@@ -46,14 +46,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- External stylesheet — all CSS lives here, separated from the HTML -->
+  <!-- External stylesheet, all CSS lives here, separated from the HTML -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
 <!-- ══════════════════════════════════════════════════════════
-  NAV — Fixed navigation bar
+  NAV, Fixed navigation bar
   Stays at the top while the user scrolls through the page.
   The .nav-logo is the brand mark; .nav-links are anchor links
   that jump to each section using smooth scroll (set in CSS).
@@ -62,7 +62,7 @@
   <!-- Brand logo text (top-left) -->
   <div class="nav-logo">XR · Data</div>
 
-  <!-- Horizontal menu links — each href matches a section id below -->
+  <!-- Horizontal menu links, each href matches a section id below -->
   <ul class="nav-links">
     <li><a href="#story">My Story</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -75,9 +75,9 @@
 
 
 <!-- ══════════════════════════════════════════════════════════
-  HERO — Full-screen landing section
+  HERO, Full-screen landing section
   The first thing visitors see. Contains:
-    • Small badge pills (sports & origin — humanize the brand)
+    • Small badge pills (sports & origin, humanize the brand)
     • Name heading with teal accent
     • Professional subtitle
     • One-sentence tagline (the "hook")
@@ -91,26 +91,24 @@
     <!-- LEFT COLUMN: text content -->
     <div class="hero-text fade-up">
 
-      <!-- Small personality badges — tennis and water skiing humanize
-           the brand before the professional pitch begins -->
+      <!-- Small personality badges that humanize the brand before the professional pitch begins -->
       <div class="hero-badges">
         <span class="hero-badge">🎾 Tennis</span>
-        <span class="hero-badge">🌊 Water Skiing</span>
         <span class="hero-badge">🇨🇴 Colombia → 🇺🇸 USA</span>
         <span class="hero-badge">👩‍💻 Data Scientist</span>
       </div>
 
-      <!-- Main name — first name highlighted in teal for visual emphasis -->
+      <!-- Main name, first name highlighted in teal for visual emphasis -->
       <h1>Hi, I'm <span>Ximena</span><br />Rodriguez</h1>
 
       <!-- Short professional title in small caps -->
       <p class="hero-subtitle">Data Scientist · Python · SQL · Bilingual</p>
 
-      <!-- The "hook" — a one-sentence pitch that uses NLP future-pacing.
+      <!-- The "hook", a one-sentence pitch that uses NLP future-pacing.
            "I turn raw data into decisions" is the core value proposition. -->
       <p class="hero-tagline">
-        From the tennis courts of Colombia to the datasets of Connecticut —
-        I found that both sports and data science reward the same thing:
+        From the tennis courts of Colombia to the datasets of Connecticut,
+        I found that tennis and data science reward the same thing:
         <strong>pattern recognition, persistence, and the courage to act.</strong>
       </p>
 
@@ -131,7 +129,7 @@
         <div class="avatar-wrap">
           <img
             src="photo.jpg"
-            alt="Ximena Rodriguez — Data Scientist"
+            alt="Ximena Rodriguez, Data Scientist"
             onerror="this.style.display='none'; document.querySelector('.avatar-initials').style.display='flex';"
           />
           <!-- Fallback: shows initials when photo.jpg is not found -->
@@ -152,10 +150,10 @@
 
 
 <!-- ══════════════════════════════════════════════════════════
-  STORY SECTION — Personal narrative "About Me"
+  STORY SECTION, Personal narrative "About Me"
   This is the most emotionally resonant section. It tells
-  Ximena's authentic life story: Colombia → USA, tennis and
-  water skiing, language barrier, identity rebuild as a
+  Ximena's authentic life story: Colombia → USA, tennis,
+  language barrier, identity rebuild as a
   professional and a mom. Written using NLP storytelling
   techniques: pain → struggle → transformation → now.
 
@@ -175,24 +173,24 @@
       <!-- LEFT: full personal narrative -->
       <div class="story-text fade-up">
 
-        <!-- Pull-quote — the emotional anchor of the whole story -->
+        <!-- Pull-quote, the emotional anchor of the whole story -->
         <blockquote class="story-quote">
-          "I grew up with a tennis racket in one hand and a water ski rope in the other, and I never imagined both would shape the way I approach challenges, patterns, and performance in data science."
+          "I grew up with a tennis racket in my hand, and I never imagined the sport would shape the way I approach challenges, patterns, and performance in data science."
         </blockquote>
 
         <!-- Chapter 1: Colombia roots -->
         <p>
-          Growing up in <strong>Colombia</strong>, I spent my weekends on the courts and on the water.
-          Tennis taught me to read patterns before they happened — to watch how the ball bounced,
-          predict my opponent's next move, and respond faster than instinct. Water skiing taught me
-          something different: how to <strong>trust the data in your body</strong>, read the surface
-          beneath you, and commit fully even when the current felt uncertain.
+          Growing up in <strong>Colombia</strong>, I spent my weekends on the tennis courts.
+          Tennis taught me to read patterns before they happened, to watch how the ball bounced,
+          predict my opponent's next move, and respond faster than instinct. It taught me that
+          <strong>every point has data behind it</strong>, and that the player who reads it first wins.
         </p>
 
         <p>
           I was also drawn to computers. While my friends were memorizing pop lyrics, I was building
-          logical systems in my head. So I studied <strong>Computer Systems Engineering</strong> at
-          UniEspinal, graduated, and thought: <em>I know what I'm doing. I'm ready.</em>
+          logical systems in my head. I studied <strong>Computer Systems Engineering</strong> at
+          UniEspinal, where I built a strong foundation in data structures, mathematics, analytical
+          thinking, and technology project management.
         </p>
 
         <!-- Chapter 2: The USA challenge -->
@@ -203,7 +201,7 @@
         <p>
           Nothing humbles you like being a trained engineer who can't order coffee without
           rehearsing the sentence. My first year in Connecticut was a masterclass in starting over.
-          I was a <strong>professional rebuilding her identity</strong> — while also being a
+          I was a <strong>professional rebuilding her identity</strong>, while also being a
           <strong>mom</strong>, which meant zero time for self-pity and infinite motivation to
           figure it out. I had to prove myself twice: once in English, once as a woman in tech.
         </p>
@@ -211,27 +209,26 @@
         <!-- Personality/life detail callouts -->
         <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0;">
           <span class="story-highlight">🎾 Still plays tennis on weekends</span>
-          <span class="story-highlight">🌊 Water skiing whenever possible</span>
           <span class="story-highlight">👩‍👧 Mom first, data scientist second</span>
           <span class="story-highlight">🗣️ EN · ES · IT</span>
         </div>
 
         <!-- Chapter 3: Transformation through data -->
         <p>
-          What saved me — what always saves me — was finding the pattern inside the chaos.
+          What saved me, what always saves me, was finding the pattern inside the chaos.
           And that's when I discovered <strong>data science</strong>. Python doesn't care about
           your accent. SQL doesn't ask where you were born. A well-built Pandas pipeline works
           the same in Bogotá and Stamford. I realized that <strong>data is the universal language
-          I had been searching for all along</strong> — and that my outsider's perspective was
+          I had been searching for all along</strong>, and that my outsider's perspective was
           actually a superpower: I noticed things others assumed were already understood.
         </p>
 
-        <!-- Chapter 4: The "now" — the transformation complete -->
+        <!-- Chapter 4: The "now", the transformation complete -->
         <p>
           Today I combine five years of hands-on <strong>operations management</strong> experience
           with technical data science skills to help small and mid-size businesses stop guessing
           and start growing. I translate complex data into <strong>plain, bilingual language</strong>
-          that real business owners can act on — because I've been that business owner, in a
+          that real business owners can act on, because I've been that business owner, in a
           language I was still learning, making decisions with incomplete information.
           <strong>I know what that feels like, and I know what data can change.</strong>
         </p>
@@ -247,10 +244,10 @@
         <div class="milestone">
           <div class="milestone-dot">🇨🇴</div>
           <div>
-            <div class="milestone-year">Colombia — Early Years</div>
+            <div class="milestone-year">Colombia, Early Years</div>
             <p class="milestone-text">
               I earned my <strong>Computer Systems Engineering</strong> degree at UniEspinal.
-              Every weekend I was on the tennis courts or water skiing the rivers — I lived for it.
+              Every weekend I was on the tennis courts. I lived for the game.
             </p>
           </div>
         </div>
@@ -258,11 +255,11 @@
         <div class="milestone">
           <div class="milestone-dot">✈️</div>
           <div>
-            <div class="milestone-year">The Big Move — USA</div>
+            <div class="milestone-year">The Big Move, USA</div>
             <p class="milestone-text">
               I left family, comfort, and fluency behind. I arrived in
               <strong>Connecticut</strong> with a degree, a child, and a
-              dictionary — and I started from scratch.
+              dictionary, and I started from scratch.
             </p>
           </div>
         </div>
@@ -270,10 +267,10 @@
         <div class="milestone">
           <div class="milestone-dot">💼</div>
           <div>
-            <div class="milestone-year">2020 — Building Again</div>
+            <div class="milestone-year">2020, Building Again</div>
             <p class="milestone-text">
               I took over <strong>operations management</strong> of a driving school.
-              I used data — records, budgets, student outcomes — to grow the business
+              I used data, records, budgets, student outcomes, to grow the business
               while raising my family.
             </p>
           </div>
@@ -282,10 +279,10 @@
         <div class="milestone">
           <div class="milestone-dot">🐍</div>
           <div>
-            <div class="milestone-year">Data Science — The Pivot</div>
+            <div class="milestone-year">Data Science, The Pivot</div>
             <p class="milestone-text">
               I earned my <strong>Data Science Certification</strong> from
-              The Knowledge House. Python, SQL, Pandas, Jupyter — the tools that
+              The Knowledge House. Python, SQL, Pandas, Jupyter, the tools that
               turned my intuition into proof.
             </p>
           </div>
@@ -294,11 +291,11 @@
         <div class="milestone">
           <div class="milestone-dot">🚀</div>
           <div>
-            <div class="milestone-year">2026 — Now</div>
+            <div class="milestone-year">2026, Now</div>
             <p class="milestone-text">
               I help businesses in <strong>English and Spanish</strong> use
-              data to make smarter decisions. I still play tennis on weekends —
-              and I still hit the water whenever I can.
+              data to make smarter decisions. I still play tennis every weekend,
+              and I bring that same competitive mindset to every project.
             </p>
           </div>
         </div>
@@ -324,7 +321,7 @@
     <h2 class="section-title">Skills &amp; Tools</h2>
     <div class="divider"></div>
     <p class="section-desc">
-      I bring a full analytical toolkit — from writing SQL queries to building predictive models
+      I bring a full analytical toolkit, from writing SQL queries to building predictive models
       and communicating insights clearly to non-technical audiences.
     </p>
 
@@ -336,12 +333,12 @@
         <span class="skill-icon">🐍</span>
         <h3>Programming &amp; Analysis</h3>
 
-        <!-- Bulleted skill items — ▹ bullet added via CSS ::before -->
+        <!-- Bulleted skill items, ▹ bullet added via CSS ::before -->
         <div class="skill-items">
-          <div class="skill-item">Python — scripting, automation, analysis</div>
-          <div class="skill-item">Pandas — data wrangling &amp; transformation</div>
-          <div class="skill-item">SQL — queries, joins, aggregations</div>
-          <div class="skill-item">Excel — pivot tables, formulas, dashboards</div>
+          <div class="skill-item">Python, scripting, automation, analysis</div>
+          <div class="skill-item">Pandas, data wrangling &amp; transformation</div>
+          <div class="skill-item">SQL, queries, joins, aggregations</div>
+          <div class="skill-item">Excel, pivot tables, formulas, dashboards</div>
         </div>
 
         <!-- Animated progress bars.
@@ -360,10 +357,10 @@
         <h3>Data Science Tools</h3>
 
         <div class="skill-items">
-          <div class="skill-item">Jupyter Notebook — reproducible analysis</div>
-          <div class="skill-item">Data Visualization — charts &amp; storytelling</div>
-          <div class="skill-item">GitHub — version control &amp; collaboration</div>
-          <div class="skill-item">Statistics — descriptive &amp; inferential</div>
+          <div class="skill-item">Jupyter Notebook, reproducible analysis</div>
+          <div class="skill-item">Data Visualization, charts &amp; storytelling</div>
+          <div class="skill-item">GitHub, version control &amp; collaboration</div>
+          <div class="skill-item">Statistics, descriptive &amp; inferential</div>
         </div>
 
         <div class="bar-label"><span>Jupyter / Visualization</span><span>85%</span></div>
@@ -379,10 +376,10 @@
         <h3>Business &amp; Communication</h3>
 
         <div class="skill-items">
-          <div class="skill-item">Operations Management — process design</div>
-          <div class="skill-item">Budget Tracking — financial data oversight</div>
-          <div class="skill-item">Process Improvement — efficiency gains</div>
-          <div class="skill-item">Bilingual Reporting — English &amp; Spanish</div>
+          <div class="skill-item">Operations Management, process design</div>
+          <div class="skill-item">Budget Tracking, financial data oversight</div>
+          <div class="skill-item">Process Improvement, efficiency gains</div>
+          <div class="skill-item">Bilingual Reporting, English &amp; Spanish</div>
         </div>
 
         <div class="bar-label"><span>Operations</span><span>95%</span></div>
@@ -421,9 +418,9 @@
         <h3>🎯 Mission</h3>
         <p>
           To empower small and mid-size businesses with
-          <strong>clear, actionable data insights</strong> — so every decision
+          <strong>clear, actionable data insights</strong>, so every decision
           is backed by evidence, not guesswork. I translate complex data into
-          plain, bilingual language that real business owners can act on —
+          plain, bilingual language that real business owners can act on 
           regardless of technical background or language.
         </p>
       </div>
@@ -432,8 +429,8 @@
       <div class="mv-card">
         <h3>🌎 Vision</h3>
         <p>
-          A world where every entrepreneur — regardless of origin, language,
-          or resources — can <strong>unlock the full power of their data</strong>
+          A world where every entrepreneur, regardless of origin, language,
+          or resources, can <strong>unlock the full power of their data</strong>
           to compete, grow, and thrive. Data should not be a privilege reserved
           for corporations with large analytics teams. It should be a tool
           accessible to every business owner who dares to ask better questions.
@@ -448,38 +445,38 @@
          Social proof stats anchor the claim with credibility. -->
     <div class="nlp-banner fade-up">
 
-      <!-- Future-pacing quote — the visitor imagines the outcome -->
+      <!-- Future-pacing quote, the visitor imagines the outcome -->
       <p class="nlp-quote">
         "Imagine knowing <span>exactly which actions</span> will grow your revenue
-        next quarter — before your competitors even see the trend coming.
+        next quarter, before your competitors even see the trend coming.
         That's what a data partnership makes possible."
       </p>
 
       <!-- Pain → solution bridge sentence -->
       <p class="nlp-sub">
         You don't need a full analytics department. You need the
-        <strong>right partner</strong> — someone who has lived the reality of
+        <strong>right partner</strong>, someone who has lived the reality of
         running a business, understands your language, and knows how to turn
         messy spreadsheets into clear decisions.
       </p>
 
-      <!-- Social proof statistics — builds trust and urgency -->
+      <!-- Social proof statistics, builds trust and urgency -->
       <div class="proof-stats">
 
         <div>
-          <!-- 3× growth stat — widely cited in HBR/McKinsey data research -->
+          <!-- 3× growth stat, widely cited in HBR/McKinsey data research -->
           <div class="proof-stat-num">3×</div>
           <p class="proof-stat-label">faster growth with data-driven decisions</p>
         </div>
 
         <div>
-          <!-- 40% waste reduction — operational efficiency benchmark -->
+          <!-- 40% waste reduction, operational efficiency benchmark -->
           <div class="proof-stat-num">40%</div>
           <p class="proof-stat-label">average reduction in operational waste</p>
         </div>
 
         <div>
-          <!-- 2× retention — customer analytics impact statistic -->
+          <!-- 2× retention, customer analytics impact statistic -->
           <div class="proof-stat-num">2×</div>
           <p class="proof-stat-label">better customer retention through insights</p>
         </div>
@@ -492,7 +489,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════
-  PROJECTS SECTION — Featured GitHub Project
+  PROJECTS SECTION, Featured GitHub Project
   Styled to mimic GitHub's repository card UI so it feels
   credible and familiar to technical evaluators.
 
@@ -507,11 +504,11 @@
     <h2 class="section-title">GitHub Project</h2>
     <div class="divider"></div>
     <p class="section-desc">
-      My applied data science in action — real problems, real datasets,
+      My applied data science in action, real problems, real datasets,
       and clean, documented code I'm proud to share.
     </p>
 
-    <!-- The project card — centered and max-width constrained -->
+    <!-- The project card, centered and max-width constrained -->
     <div class="project-card fade-up">
 
       <!-- HEADER ROW: GitHub octopus icon + owner/repo + Public badge -->
@@ -531,14 +528,14 @@
       <!-- BODY: description, feature list, stack tags, meta row -->
       <div class="project-body">
 
-        <h3>Student Success Predictor — DMV Exam Pass Rate Model</h3>
+        <h3>Student Success Predictor, DMV Exam Pass Rate Model</h3>
 
         <!-- One-paragraph project description -->
         <p>
           I built a machine learning pipeline that analyzes student profiles, lesson
           attendance records, and practice test scores to predict the probability
           of passing the New York DMV licensing exam. I designed it to help driving schools
-          prioritize coaching resources and improve student pass rates —
+          prioritize coaching resources and improve student pass rates 
           inspired directly by five years of managing a real driving school's data.
         </p>
 
@@ -598,7 +595,7 @@
   Four service offerings in a 2×2 card grid.
   Each card has an emoji icon, a bold title, and a short
   description that focuses on the business outcome, not just
-  the technical process — client-centric language.
+  the technical process, client-centric language.
 ══════════════════════════════════════════════════════════════ -->
 <section id="services">
   <div class="container">
@@ -607,7 +604,7 @@
     <h2 class="section-title">Services</h2>
     <div class="divider"></div>
     <p class="section-desc">
-      From messy spreadsheets to polished dashboards — I handle the full data
+      From messy spreadsheets to polished dashboards, I handle the full data
       pipeline so you can focus on running your business.
     </p>
 
@@ -622,7 +619,7 @@
           <p>
             I transform scattered, inconsistent records into a clean, reliable
             foundation. I use Python and Pandas to process thousands of rows
-            accurately and fast — so you never have to ask "which spreadsheet is the real one?" again.
+            accurately and fast, so you never have to ask "which spreadsheet is the real one?" again.
           </p>
         </div>
       </div>
@@ -635,7 +632,7 @@
           <p>
             I build interactive visual reports that tell the story behind your numbers.
             I deliver them in Jupyter Notebook or Excel formats your team can actually
-            understand, update, and share — no data science degree required.
+            understand, update, and share, no data science degree required.
           </p>
         </div>
       </div>
@@ -649,7 +646,7 @@
             I deliver SQL-powered insights into your customers, revenue, and operations.
             I help you identify trends before they become problems, spot inefficiencies
             before they become costs, and make confident decisions backed by
-            evidence — not just instinct.
+            evidence, not just instinct.
           </p>
         </div>
       </div>
@@ -661,7 +658,7 @@
           <h3>Python Automation</h3>
           <p>
             I eliminate hours of manual, repetitive work with custom Python scripts
-            that automate data entry, report generation, and record management —
+            that automate data entry, report generation, and record management 
             giving you back time to focus on the decisions only you can make.
           </p>
         </div>
@@ -686,10 +683,10 @@
       <h2 class="section-title">Get In Touch</h2>
       <div class="divider"></div>
 
-      <!-- Short invitation — warm, direct, bilingual reference -->
+      <!-- Short invitation, warm, direct, bilingual reference -->
       <p class="section-desc">
         I'd love to help you make smarter decisions with your data. Let's talk.
-        I promise: no jargon — just clear, honest conversation about what I can build for you.
+        I promise: no jargon, just clear, honest conversation about what I can build for you.
         Hablamos en español también.
       </p>
 
@@ -743,7 +740,7 @@
 
         </div><!-- end contact-grid -->
 
-        <!-- Primary CTA button — mailto link that pre-fills the email app -->
+        <!-- Primary CTA button, mailto link that pre-fills the email app -->
         <a
           href="mailto:ingximerodriguez@gmail.com?subject=Data%20Science%20Inquiry"
           class="btn contact-btn"
@@ -758,7 +755,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════
-  FOOTER — One-line copyright strip at the very bottom.
+  FOOTER, One-line copyright strip at the very bottom.
 ══════════════════════════════════════════════════════════════ -->
 <footer>
   <p>
@@ -769,7 +766,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════
-  JAVASCRIPT — Two behaviors:
+  JAVASCRIPT, Two behaviors:
 
   1. SCROLL ANIMATIONS (IntersectionObserver)
      Watches every element with the .fade-up class.
