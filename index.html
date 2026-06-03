@@ -70,6 +70,8 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
+    <!-- External link to GitHub profile (opens in a new tab) -->
+    <li><a href="https://github.com/Ingxrodriguez" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
   </ul>
 </nav>
 
@@ -479,15 +481,15 @@
   Styled to mimic GitHub's repository card UI so it feels
   credible and familiar to technical evaluators.
 
-  Project: student-success-predictor
-  A machine learning model that predicts DMV exam pass rates.
-  (This project is an illustrative portfolio example.)
+  Project: financial-fraud-detection
+  A RandomForest ML pipeline that detects fraudulent bank
+  transactions in a 6.3M-row dataset.
 ══════════════════════════════════════════════════════════════ -->
 <section id="projects">
   <div class="container">
 
     <p class="section-label">Featured Work</p>
-    <h2 class="section-title">GitHub Project</h2>
+    <h2 class="section-title">Pinned Project</h2>
     <div class="divider"></div>
     <p class="section-desc">
       My applied data science in action, real problems, real datasets,
@@ -501,67 +503,65 @@
       <div class="project-header">
         <span class="gh-icon">🐙</span>
 
-        <!-- Breadcrumb: "ingxrodriguez / student-success-predictor" -->
+        <!-- Breadcrumb: "Ingxrodriguez / financial-fraud-detection" -->
         <div class="project-repo">
-          <span class="owner">ingxrodriguez /</span>
-          <span class="name">student-success-predictor</span>
+          <span class="owner">Ingxrodriguez /</span>
+          <span class="name">financial-fraud-detection</span>
         </div>
 
         <!-- Badge indicating this is a public repository -->
-        <span class="project-badge">Public</span>
+        <span class="project-badge">📌 Pinned</span>
       </div><!-- end project-header -->
 
       <!-- BODY: description, feature list, stack tags, meta row -->
       <div class="project-body">
 
-        <h3>Student Success Predictor, DMV Exam Pass Rate Model</h3>
+        <h3>Financial Fraud Detection, Machine Learning Pipeline</h3>
 
         <!-- One-paragraph project description -->
         <p>
-          I built a machine learning pipeline that analyzes student profiles, lesson
-          attendance records, and practice test scores to predict the probability
-          of passing the New York DMV licensing exam. I designed it to help driving schools
-          prioritize coaching resources and improve student pass rates 
-          inspired directly by five years of managing a real driving school's data.
+          I built a machine learning pipeline that detects fraudulent financial transactions
+          in a synthetic dataset of <strong>6.3 million bank transactions</strong>, where only
+          0.13% are fraud, a severe class-imbalance problem. The goal: catch as many fraudulent
+          transactions as possible while keeping false positives near zero.
         </p>
 
         <!-- Three bullet points: what the project actually does -->
         <ul class="project-features">
           <li>
-            Cleans and engineers features from raw student records using
-            <strong>Pandas</strong>, handling missing values and outliers automatically
+            Performs full <strong>exploratory data analysis</strong> with Pandas, uncovering that
+            fraud only occurs in CASH_OUT and TRANSFER types and averages 1.47M vs 178K for legit transactions
           </li>
           <li>
-            Trains and compares a Logistic Regression and Random Forest classifier
-            with <strong>Scikit-learn</strong>, achieving 84% prediction accuracy
+            Engineers high-signal features (origBalanceError, balanceChangeOrig) and trains a
+            <strong>RandomForestClassifier</strong> on a balanced sample with stratified train/test split
           </li>
           <li>
-            Outputs a fully interactive <strong>Jupyter Notebook</strong> report
-            with visual breakdowns per student cohort and risk-level recommendations
+            Achieves an <strong>F1 score of 0.9985</strong>, catching 1,638 of 1,643 fraud cases
+            with zero false positives, a massive improvement over the dataset's native flag system
           </li>
         </ul>
 
         <!-- Technology stack pills -->
         <div class="project-stack">
-          <span class="stack-tag">Python 3.11</span>
+          <span class="stack-tag">Python</span>
           <span class="stack-tag">Pandas</span>
           <span class="stack-tag">Scikit-learn</span>
+          <span class="stack-tag">Random Forest</span>
           <span class="stack-tag">Jupyter Notebook</span>
           <span class="stack-tag">Matplotlib</span>
-          <span class="stack-tag">SQL</span>
-          <span class="stack-tag">NumPy</span>
+          <span class="stack-tag">EDA</span>
         </div>
 
-        <!-- Meta row: language, stars, forks, license, link -->
+        <!-- Meta row: language, key metric, dataset size, link -->
         <div class="project-meta">
-          <span>🟡 Python</span>    <!-- primary language indicator -->
-          <span>⭐ 47</span>        <!-- star count -->
-          <span>🍴 12</span>        <!-- fork count -->
-          <span>📄 MIT License</span>
+          <span>🟡 Jupyter Notebook</span>  <!-- primary language indicator -->
+          <span>🎯 F1 0.9985</span>          <!-- headline metric -->
+          <span>📊 6.3M rows</span>          <!-- dataset size -->
           <!-- Link to the GitHub repository -->
           <a
             class="project-link"
-            href="https://github.com/ingxrodriguez/student-success-predictor"
+            href="https://github.com/Ingxrodriguez/financial-fraud-detection"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -721,6 +721,18 @@
             <div>
               <div class="ci-label">Languages</div>
               <div class="ci-value">English · Spanish · Italian</div>
+            </div>
+          </div>
+
+          <!-- GitHub profile -->
+          <div class="contact-item">
+            <span class="ci-icon">🐙</span>
+            <div>
+              <div class="ci-label">GitHub</div>
+              <!-- Link to GitHub profile, opens in a new tab -->
+              <div class="ci-value">
+                <a href="https://github.com/Ingxrodriguez" target="_blank" rel="noopener noreferrer">github.com/Ingxrodriguez</a>
+              </div>
             </div>
           </div>
 
