@@ -404,10 +404,12 @@ section {
   background: var(--cream-alt); /* alternates from hero's plain cream */
 }
 
-/* Two-column layout: story text + stats/milestones */
+/* Single-column layout: story text, centered with a readable width */
 .story-grid {
   display: grid;
-  grid-template-columns: 3fr 2fr; /* text gets more space than sidebar */
+  grid-template-columns: 1fr;
+  max-width: 820px;     /* keeps line length comfortable for reading */
+  margin: 0 auto;
   gap: 4rem;
   align-items: start;
 }
