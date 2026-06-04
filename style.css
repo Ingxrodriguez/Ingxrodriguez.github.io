@@ -747,6 +747,13 @@ section {
   background: var(--cream);
 }
 
+/* Stacks multiple project cards vertically with even spacing */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
 /* Centered card with max-width so it doesn't stretch too wide */
 .project-card {
   background: var(--card);
