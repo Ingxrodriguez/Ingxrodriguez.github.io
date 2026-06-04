@@ -934,6 +934,23 @@ section {
   line-height: 1.65;
 }
 
+/* Call-to-action line centered below the service cards */
+.services-cta {
+  text-align: center;
+  max-width: 640px;
+  margin: 2.5rem auto 0;
+  padding: 1.2rem 1.6rem;
+  background: rgba(200, 169, 110, 0.12);
+  border: 1px solid var(--border-gold);
+  border-radius: 12px;
+  color: var(--slate);
+  font-size: 1rem;
+}
+
+.services-cta strong {
+  color: var(--navy);
+}
+
 
 /* ════════════════════════════════════════════════════════════
    CONTACT SECTION
